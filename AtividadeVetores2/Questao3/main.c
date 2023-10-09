@@ -19,9 +19,6 @@ int main()
         scanf("%d", &vetor2[i]);
         vetor3[i+cont] = vetor2[i];
     }
-  
-
-
     for (int i = 0; i < 20; i++)
     {
         printf("%d ", vetor3[i]);
