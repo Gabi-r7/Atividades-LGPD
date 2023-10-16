@@ -26,43 +26,33 @@ int main(){
             }
         }
         else{
-            printf("Posição já ocupada\n");
+            printf("Posição já ocupada, tente novamente:\n");
         }
-        if (posicoes[0][0] == posicoes[0][1] && posicoes[0][1] == posicoes[0][2] && posicoes[0][1] != ' '){
-            printf("Jogador %c ganhou\n", jogada);
-            jogando = 0;
-        }
-        else if (posicoes[1][0] == posicoes[1][1] && posicoes[1][1] == posicoes[1][2] && posicoes[1][1] != ' '){
-            printf("Jogador %c ganhou\n", jogada);
-            jogando = 0;
-        }
-        else if (posicoes[2][0] == posicoes[2][1] && posicoes[2][1] == posicoes[2][2] && posicoes[2][1] != ' '){
-            printf("Jogador %c ganhou\n", jogada);
-            jogando = 0;
-        }
-        else if (posicoes[0][0] == posicoes[1][0] && posicoes[1][0] == posicoes[2][0] && posicoes[1][0] != ' '){
-            printf("Jogador %c ganhou\n", jogada);
-            jogando = 0;
-        }
-        else if (posicoes[0][1] == posicoes[1][1] && posicoes[1][1] == posicoes[2][1] && posicoes[1][1] != ' '){
-            printf("Jogador %c ganhou\n", jogada);
-            jogando = 0;
-        }
-        else if (posicoes[0][2] == posicoes[1][2] && posicoes[1][2] == posicoes[2][2] && posicoes[1][2] != ' '){
-            printf("Jogador %c ganhou\n", jogada);
-            jogando = 0;
-        }
-        else if (posicoes[0][0] == posicoes[1][1] && posicoes[1][1] == posicoes[2][2] && posicoes[1][1] != ' '){
-            printf("Jogador %c ganhou\n", jogada);
-            jogando = 0;
-        }
-        else if (posicoes[0][2] == posicoes[1][1] && posicoes[1][1] == posicoes[2][0] && posicoes[1][1] != ' '){
-            printf("Jogador %c ganhou\n", jogada);
-            jogando = 0;
-        }
-        else{
-            printf("Deu velha\n");
-            jogando = 0;
+        for (int i = 0; i < 3; i++)
+        {
+            if (posicoes[i][0] == jogada && posicoes[i][1] == jogada && posicoes[i][2] == jogada)
+            {
+                printf("Jogador %c ganhou\n", jogada);
+                jogando = 0;
+            }
+            else if (posicoes[0][i] == jogada && posicoes[1][i] == jogada && posicoes[2][i] == jogada)
+            {
+                printf("Jogador %c ganhou\n", jogada);
+                jogando = 0;
+            }
+            else if (posicoes[0][0] == jogada && posicoes[1][1] == jogada && posicoes[2][2] == jogada)
+            {
+                printf("Jogador %c ganhou\n", jogada);
+                jogando = 0;
+            }
+            else if (posicoes[0][2] == jogada && posicoes[1][1] == jogada && posicoes[2][0] == jogada)
+            {
+                printf("Jogador %c ganhou\n", jogada);
+                jogando = 0;
+            }
+            else if (posicoes[0][0] != ' ' && posicoes[0][1] != ' ' && posicoes[0][2] != ' ' && posicoes[1][0] != ' ' && posicoes[1][1] != ' ' && posicoes[1][2] != ' ' && posicoes[2][0] != ' ' && posicoes[2][1] != ' ' && posicoes[2][2] != ' '){
+                printf("Deu velha\n");
+            }
         }
         g++;
     } while (jogando == 1);
