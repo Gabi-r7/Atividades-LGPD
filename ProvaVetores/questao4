@@ -16,29 +16,13 @@ int main() {
             scanf("%d", &m2[x][y]);
         }
     }
-
-          
     for (int x = 0; x < 5; x++){
         for (int y = 0; y < 5; y++){
-            if (x==y)            {
-                if (matriz[x][y] > maior)
-                {
-                    maior = matriz[x][y];
-                }
+            if (m1[x][y] == m2[x+1][y] || m1[x][y] == m2[x+2][y] || m1[x][y] == m2[x+3][y] || m1[x][y] == m2[x+4][y] || m1[x][y] == m2[x+5][y] || m1[x][y] == m2[x+6][y] || m1[x][y] == m2[x+7][y] || m1[x][y] == m2[x+8][y] || m1[x][y] == m2[x+9][y] || m1[x][y] == m2[x][y+1] || m1[x][y] == m2[x][y+2] || m1[x][y] == m2[x][y+3] || m1[x][y] == m2[x][y+4] || m1[x][y] == m2[x][y+5] || m1[x][y] == m2[x][y+6] || m1[x][y] == m2[x][y+7] || m1[x][y] == m2[x][y+8] || m1[x][y] == m2[x][y+9]){
+            printf("\nMatriz1 (%d, %d): %d", x, y, m1[x][y]);
+            printf("\nMatriz2 (%d, %d): %d", x, y, m2[x][y]);
             }
         }
     }
-    for (int x = 0, y = 4; x < 5 && y >= 0; x++, y--){
-        soma += matriz[x][y];
-        printf("%d ", matriz[x][y]);
-    }
-    for (int x = 0; x < 5; x++){
-        for (int y = 0; y < 5; y++){
-            printf("%d ", matriz[x][y]);
-        }
-        printf("\n");
-    }
-    printf("O maior número é: %d", maior);
-    printf("\nA soma dos elementos é: %d", soma);   
     return 0;
 }
