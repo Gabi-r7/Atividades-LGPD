@@ -5,6 +5,23 @@
 int x;
 bool boleanopositivo, boleanopar;
 
+bool sinal (int x){
+    if (x >= 0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+bool par (int x){
+    if (x % 2 == 0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 int main () {
     printf("Digite um número: ");
     scanf("%d", &x);
@@ -23,22 +40,4 @@ int main () {
         printf("\n%d é negativo.\n", x);
     }
     return 0;
-}
-
-bool sinal (int x){
-    if (x >= 0){
-        return true;
-    }
-    else{
-        return false;
-    }
-}
-
-bool par (int x){
-    if (x % 2 == 0){
-        return true;
-    }
-    else{
-        return false;
-    }
 }
