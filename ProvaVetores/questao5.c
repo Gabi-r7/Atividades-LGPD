@@ -4,7 +4,7 @@
 int main() {
     int media[10], alunoenota[10][3], contaprov=0, contreprov=0, cont10=0, soma[10];
     
-    for (int x = 0; x < 10; x++){
+    for (int x = 0; x < 1; x++){
         printf("\n");
         for (int y = 0; y < 3; y++){
             printf("Digite o valor da %d° nota do aluno %d: ", y+1, x+1);

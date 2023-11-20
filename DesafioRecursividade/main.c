@@ -7,7 +7,6 @@ int n=0, tentativas=0;
 int randomico(int n) {
     srand(time(NULL));
     n = (rand() % 100) + 1;
-
     return n;
 }
 
