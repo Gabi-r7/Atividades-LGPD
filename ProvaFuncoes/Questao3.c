@@ -2,22 +2,31 @@
 #include <stdlib.h>
 #include <string.h>
 
-char senha[21], especiais[6] = {'/*', '/$', '/&', '/#', '/@'};
-int tamanho, temOuNao;
+int temOuNao = 0;
 
-void verificar(char senha[]){
-    tamanho = strlen(senha);
-    temOuNao = strchr(senha, especiais);
-    if (tamanho > 8 && temOuNao != NULL){
-        printf("Senha válida!");
-    }
-    else{
-        main();
+int verificar(char senha[51], int tamanho){
+    char especiais[6] = "*$&#@";
+    if (tamanho >= 8){
+        for (int i = 0; i < 5; i++){
+            if (strchr(senha, especiais[i]) != NULL){
+                return 1;
+            }
+        }
     }
 }
 
 int main(){
+    char senha[51]; 
+    int tamanho=0;
     printf("Digite uma senha válida: ");
     scanf("%s", senha);
-    verificar(senha);
+    tamanho = strlen(senha);
+    temOuNao = verificar(senha, tamanho);
+    if (temOuNao == 1){
+        printf("Senha válida");
+    }
+    else{
+        main();
+    }
+    return 0;
 }
