@@ -11,9 +11,6 @@ int verificar(char senha[51], int tamanho){
             if (strchr(senha, especiais[i]) != NULL){
                 return 1;
             }
-            else{
-                return 0;
-            }
         }
     }
     else{
